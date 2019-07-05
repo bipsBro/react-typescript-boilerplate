@@ -15,15 +15,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    "baseUrl": ".",
+    "baseUrl": "src",
     "rootDir": ".",
     "noUnusedParameters": true,
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "paths": {
-      "@components/*": ["src/components/*"]
-    },
     "typeRoots": ["node_modules/@types"]
   },
   "include": ["src"],
