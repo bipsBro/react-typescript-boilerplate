@@ -1,8 +1,12 @@
 import React from "react";
 import { Provider } from "react-redux";
+import { ThemeProvider } from "styled-components";
+import { BrowserRouter } from "react-router-dom";
+import theme from "./statics/themes/index";
 import configureStore from "./store";
-import { BrowserRouter as Router } from "react-router-dom";
 import AppRouter from "./routers";
+import { GlobalStyle } from "./statics/themes/globalstyles";
+
 const store = configureStore();
 
 // import { SystemState } from "./store/system/types";
@@ -32,8 +36,13 @@ const store = configureStore();
 
 export const Root = () => (
   <Provider store={store}>
-    <Router>
-      <AppRouter />
-    </Router>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <React.Fragment>
+          <GlobalStyle />
+          <AppRouter />
+        </React.Fragment>
+      </ThemeProvider>
+    </BrowserRouter>
   </Provider>
 );
